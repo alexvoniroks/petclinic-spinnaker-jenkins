@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo '=== Building Petclinic Docker Image ==='
                 script {
-                    app = docker.build("og220/aws-ci")
+                    app = docker.build("alexvoniroks/aws-ci")
                 }
             }
         }
@@ -52,8 +52,8 @@ pipeline {
         stage('Remove local images') {
             steps {
                 echo '=== Delete the local docker images ==='
-                sh("docker rmi -f og220/aws-ci:latest || :")
-                sh("docker rmi -f og220/aws-ci:$SHORT_COMMIT || :")
+                sh("docker rmi -f alexvoniroks/aws-ci:latest || :")
+                sh("docker rmi -f alexvoniroks/aws-ci:$SHORT_COMMIT || :")
             }
         }
     }
