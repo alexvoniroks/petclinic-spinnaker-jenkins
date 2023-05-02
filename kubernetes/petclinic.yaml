@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: petclinic
-        image: og220/aws-ci
+        image: alexvoniroks/aws-ci
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
